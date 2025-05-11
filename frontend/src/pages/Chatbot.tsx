@@ -41,7 +41,7 @@ const Chatbot: React.FC = () => {
     setAudioUrl(null);
 
     try {
-      const response = await axios.post("http://localhost:8000/api/tts", {
+      const response = await axios.post("http://localhost:8000/api/tts", { // sent to backend to get audio url
         text,
       });
       setAudioUrl(response.data.audio_url);
@@ -83,7 +83,7 @@ const Chatbot: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/stt/123",
+        "http://localhost:8000/api/stt/123", // sent to get transcript
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
